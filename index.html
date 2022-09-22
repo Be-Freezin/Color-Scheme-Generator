@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+             <input type="color" name="color" id="colorPicker">
+             <select name="select" id="scaleSelector">
+               <option class="scaleOption" value="">Monochrome</option>
+          <option class="scaleOption" value="">Monochrome-dark</option>
+          <option class="scaleOption" value="">Monochrome-light</option>
+          <option class="scaleOption" value="">Analogic</option>
+          <option class="scaleOption" value="">Complement</option>
+          <option class="scaleOption" value="">Analogic-complement</option>
+          <option class="scaleOption" value="">Triad</option>
+          <option class="scaleOption" value="">Quad</option> 
+             </select>
+             <button id="getColorBtn" class="button">Get color scheme</button>
+        </div>
+       
+    </header>
+    <main>
+        <div id="colorBox" class="color-box">
+            
+        </div>
+    </main>
+
+
+<script src="app.mjs"></script>
+</body>
+</html>
