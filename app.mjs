@@ -10,11 +10,12 @@ var count = "&count=6"
 
 
 
-const myUrl =
-  api + colorPicker.value.replace("#", "") + mode + modeValue + count
 //! GET THE FETCH URL TO UPDATE THE HEX VALUE WITH THE COLOR PICKER
 render()
 function render() {
+  let myUrl =
+    api + colorPicker.value.replace("#", "") + mode + modeValue + count
+  
   fetch(myUrl)
     .then((res) => res.json())
     .then((data) => {
