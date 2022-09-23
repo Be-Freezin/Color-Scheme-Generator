@@ -6,22 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200;300;400;900&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <header class="header">
         <div class="container">
-             <input type="color" name="color" id="colorPicker">
-             <select name="select" id="scaleSelector">
-               <option class="scaleOption" value="">Monochrome</option>
-          <option class="scaleOption" value="">Monochrome-dark</option>
-          <option class="scaleOption" value="">Monochrome-light</option>
-          <option class="scaleOption" value="">Analogic</option>
-          <option class="scaleOption" value="">Complement</option>
-          <option class="scaleOption" value="">Analogic-complement</option>
-          <option class="scaleOption" value="">Triad</option>
-          <option class="scaleOption" value="">Quad</option> 
+             <input class="colorSelector" type="color" name="color" id="colorPicker">
+             <select class="scale" name="select" id="scaleSelector">
+                <option class="scaleOption" value="">Monochrome</option>
+                <option class="scaleOption" value="">Monochrome-dark</option>
+                <option class="scaleOption" value="">Monochrome-light</option>
+                <option class="scaleOption" value="">Analogic</option>
+                <option class="scaleOption" value="">Complement</option>
+                <option class="scaleOption" value="">Analogic-complement</option>
+                <option class="scaleOption" value="">Triad</option>
+                <option class="scaleOption" value="">Quad</option> 
              </select>
-             <button id="getColorBtn" class="button">Get color scheme</button>
+             <button id="getColorBtn" class="button">Get colors</button>
         </div>
        
     </header>

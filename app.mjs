@@ -1,46 +1,69 @@
 const colorPicker = document.getElementById("colorPicker")
-const scaleSelector = document.getElementsByClassName("scaleOption")
+const scaleSelector = document.getElementById("scaleSelector")
+// let value = scaleSelector[scaleSelector.selectedIndex].value
+// var text = scaleSelector[scaleSelector.selectedIndex].text.toLowerCase()
+
 
 var api = "https://www.thecolorapi.com/scheme?hex="
-var hexValue = colorPicker.value
+
 var mode = "&mode="
-var modeValue = "triad"
+
 var count = "&count=6"
 
-
-
-
-const myUrl =
-  api + colorPicker.value.replace("#", "") + mode + modeValue + count
-//! GET THE FETCH URL TO UPDATE THE HEX VALUE WITH THE COLOR PICKER
 render()
 function render() {
+  let myUrl =
+    api +
+    colorPicker.value.replace("#", "") +
+    mode +
+    scaleSelector[scaleSelector.selectedIndex].text.toLowerCase() +
+    count
+
   fetch(myUrl)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data)
       document.getElementById("colorBox").innerHTML = `
       <div class="colorContainer">
-        <img class="color-image" src="${data.colors[0].image.named}">
-        <img class="color-image" src="${data.colors[1].image.named}">
-        <img class="color-image" src="${data.colors[2].image.named}">
-        <img class="color-image" src="${data.colors[3].image.named}">
-        <img class="color-image" src="${data.colors[4].image.named}">
-        <img class="color-image" src="${data.colors[5].image.named}">
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[0].image.bare}">
+          <h3 class="hex-value">${data.colors[0].hex.value}</h3>
+        </div>
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[1].image.bare}">
+          <h3 class="hex-value">${data.colors[1].hex.value}</h3>
+        </div>
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[2].image.bare}">
+          <h3 class="hex-value">${data.colors[2].hex.value}</h3>
+        </div>
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[3].image.bare}">
+          <h3 class="hex-value">${data.colors[3].hex.value}</h3>
+        </div>
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[4].image.bare}">
+          <h3 class="hex-value">${data.colors[4].hex.value}</h3>
+        </div>
+        <div class="colorBox"> 
+          <img class="color-image" src="${data.colors[5].image.bare}">
+          <h3 class="hex-value">${data.colors[5].hex.value}</h3>
+        </div>
+
+       
       </div>
       `
     })
+
+  console.log(myUrl)
 }
+
 colorPicker.addEventListener("input", function hexCode() {
   console.log(colorPicker.value)
   return colorPicker.value
 })
 
-
-
-document.getElementById("getColorBtn").addEventListener("click",function generate(){
+document
+  .getElementById("getColorBtn")
+  .addEventListener("click", function generate() {
     render()
-    console.log(colorPicker.value)
-  
-    console.log(myUrl)
   })
